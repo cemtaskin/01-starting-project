@@ -9,8 +9,12 @@ const defaultCardState =  {
 const cardReducer = (state,action) =>{
     if (action.type === 'ADD'){
         const updatedItems = state.items.concat(action.item);
-        const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amoun;
+        console.log(state);
+        const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amount;
         
+        console.log(action.item);
+        
+
         return {
             items : updatedItems,
             totalAmount : updatedTotalAmount
@@ -23,6 +27,7 @@ const CartProvider = props =>{
     const [cartState,dispatchCartAction] =  useReducer(cardReducer,defaultCardState);
 
     const addItemToCartHandler = (item) =>{
+        console.log('item adding');
         dispatchCartAction({type:'ADD',item : item});
     };
     const remoteItemFromCartHanler = (id) =>{};
