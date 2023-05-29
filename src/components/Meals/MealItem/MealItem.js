@@ -10,7 +10,7 @@ const MealItem = (props) =>{
 
     const addToCartHandler = amount =>{
         cartCtx.addItem({name:props.name,amount:amount,price:price});
-        console.log(cartCtx.items);
+        //console.log(cartCtx.items);
     };
     return (
         <li className={classes.meal}>
